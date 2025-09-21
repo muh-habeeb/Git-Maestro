@@ -1,3 +1,16 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "gitmaestro1",
+      "description": "Developer at a laptop, focused on coding",
+      "imageUrl": "https://picsum.photos/seed/gitmaestro1/800/400",
+      "imageHint": "developer laptop"
+    },
+    {
+      "id": "gitmaestro2",
+      "description": "A diverse team collaborating around a computer screen",
+      "imageUrl": "https://picsum.photos/seed/gitmaestro2/800/400",
+      "imageHint": "team collaboration"
+    }
+  ]
 }
