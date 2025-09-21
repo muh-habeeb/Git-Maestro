@@ -204,14 +204,6 @@ export default function Home() {
           suggest improvements, run automated checks, and finally approve the merge. This is the heart of
           professional, collaborative software development.
         </p>
-        {collaborationDiagram && <Image
-          src={collaborationDiagram.imageUrl}
-          width={800}
-          height={400}
-          alt={collaborationDiagram.description}
-          className="rounded-lg glow-border"
-          data-ai-hint={collaborationDiagram.imageHint}
-        />}
         <CodeBlock
           code={`# Create a new branch named 'new-feature' and switch to it\ngit checkout -b new-feature\n\n# ... work on your feature and make commits ...\n\n# When ready, switch back to the main branch\ngit checkout main\n\n# Pull the latest changes from remote to avoid conflicts\ngit pull origin main\n\n# Merge your new-feature branch into main\ngit merge new-feature\n\n# On GitHub, create a Pull Request for peer review before merging.`}
         />
