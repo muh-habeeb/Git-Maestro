@@ -1,16 +1,18 @@
 {
   "placeholderImages": [
     {
-      "id": "gitmaestro1",
-      "description": "Developer at a laptop, focused on coding",
-      "imageUrl": "https://picsum.photos/seed/gitmaestro1/800/400",
-      "imageHint": "developer laptop"
+      "id": "version-control-diagram",
+      "description": "A diagram showing the git add and git commit workflow, illustrating how files move from the working directory to the staging area and then into the repository as a commit.",
+      "imageUrl": "https://picsum.photos/seed/git-workflow/800/400",
+      "imageHint": "git diagram"
     },
     {
-      "id": "gitmaestro2",
-      "description": "A diverse team collaborating around a computer screen",
-      "imageUrl": "https://picsum.photos/seed/gitmaestro2/800/400",
-      "imageHint": "team collaboration"
+      "id": "remote-repo-diagram",
+      "description": "A diagram illustrating the relationship between a local repository on a developer's machine and a remote repository, such as on GitHub, showing push and pull actions.",
+      "imageUrl": "https://picsum.photos/seed/git-remote/800/400",
+      "imageHint": "repository diagram"
     }
   ]
 }
+
+    

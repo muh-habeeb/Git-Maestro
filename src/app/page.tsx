@@ -5,6 +5,7 @@ import {GitBranch, ArrowRight, ArrowLeft} from 'lucide-react';
 import Image from 'next/image';
 import {GithubLogo} from '@/components/icons/github-logo';
 import JumpToMenu from '@/components/ui/jump-to-menu';
+import {PlaceHolderImages} from '@/lib/placeholder-images';
 
 const sections = [
   {id: 'intro', title: 'Introduction'},
@@ -19,6 +20,9 @@ const sections = [
 ];
 
 export default function Home() {
+  const versionControlDiagram = PlaceHolderImages.find(p => p.id === 'version-control-diagram');
+  const remoteRepoDiagram = PlaceHolderImages.find(p => p.id === 'remote-repo-diagram');
+
   return (
     <div className="flex flex-col items-center">
       <JumpToMenu sections={sections} />
@@ -81,14 +85,14 @@ export default function Home() {
           'commit' the staged changes with a descriptive message. This creates a
           permanent, historical record of your work. The special pointer <code className="font-code text-accent">HEAD</code> always points to your most recent commit, representing your current working version.
         </p>
-        <Image
-          src="https://picsum.photos/seed/version-control/800/400"
+        {versionControlDiagram && <Image
+          src={versionControlDiagram.imageUrl}
           width={800}
           height={400}
-          alt="Diagram showing git add and git commit workflow"
+          alt={versionControlDiagram.description}
           className="rounded-lg glow-border"
-          data-ai-hint="version control diagram"
-        />
+          data-ai-hint={versionControlDiagram.imageHint}
+        />}
         <CodeBlock
           code={`# Stage a specific file for the next commit\ngit add index.html\n\n# Stage all modified and new files in the current directory\ngit add .\n\n# Commit the staged changes with a descriptive message\ngit commit -m "feat: Add initial homepage structure and styles"`}
         />
@@ -179,14 +183,14 @@ export default function Home() {
           'upstream' tracking relationship, which simplifies future pushes and pulls. After the initial push, you can just run{' '}
           <code className="font-code text-accent">git push</code> and <code className="font-code text-accent">git pull</code>.
         </p>
-        <Image
-          src="https://picsum.photos/seed/cloud-collaboration/800/400"
+        {remoteRepoDiagram && <Image
+          src={remoteRepoDiagram.imageUrl}
           width={800}
           height={400}
-          alt="Diagram of local and remote repositories"
+          alt={remoteRepoDiagram.description}
           className="rounded-lg glow-border"
-          data-ai-hint="cloud collaboration diagram"
-        />
+          data-ai-hint={remoteRepoDiagram.imageHint}
+        />}
         <CodeBlock
           code={`# Link local repo to a remote on GitHub (use the URL from GitHub)\ngit remote add origin https://github.com/user/repo.git\n\n# Push your 'main' branch to the 'origin' remote and set up tracking\ngit push -u origin main\n\n# In the future, pull updates from the remote repo\ngit pull\n\n# And push your local updates\ngit push`}
         />
@@ -308,3 +312,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
