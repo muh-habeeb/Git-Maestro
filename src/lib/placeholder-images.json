@@ -7,12 +7,10 @@
       "imageHint": "git diagram"
     },
     {
-      "id": "remote-repo-diagram",
-      "description": "A diagram illustrating the relationship between a local repository on a developer's machine and a remote repository, such as on GitHub, showing push and pull actions.",
-      "imageUrl": "https://picsum.photos/seed/git-remote/800/400",
-      "imageHint": "repository diagram"
+      "id": "collaboration-diagram",
+      "description": "A diagram illustrating a team collaborating on a project, with branching and merging concepts.",
+      "imageUrl": "https://picsum.photos/seed/team-collab/800/400",
+      "imageHint": "team collaboration"
     }
   ]
 }
-
-    

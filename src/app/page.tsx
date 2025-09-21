@@ -20,8 +20,7 @@ const sections = [
 ];
 
 export default function Home() {
-  const versionControlDiagram = PlaceHolderImages.find(p => p.id === 'version-control-diagram');
-  const remoteRepoDiagram = PlaceHolderImages.find(p => p.id === 'remote-repo-diagram');
+  const collaborationDiagram = PlaceHolderImages.find(p => p.id === 'collaboration-diagram');
 
   return (
     <div className="flex flex-col items-center">
@@ -85,14 +84,6 @@ export default function Home() {
           'commit' the staged changes with a descriptive message. This creates a
           permanent, historical record of your work. The special pointer <code className="font-code text-accent">HEAD</code> always points to your most recent commit, representing your current working version.
         </p>
-        {versionControlDiagram && <Image
-          src={versionControlDiagram.imageUrl}
-          width={800}
-          height={400}
-          alt={versionControlDiagram.description}
-          className="rounded-lg glow-border"
-          data-ai-hint={versionControlDiagram.imageHint}
-        />}
         <CodeBlock
           code={`# Stage a specific file for the next commit\ngit add index.html\n\n# Stage all modified and new files in the current directory\ngit add .\n\n# Commit the staged changes with a descriptive message\ngit commit -m "feat: Add initial homepage structure and styles"`}
         />
@@ -183,14 +174,6 @@ export default function Home() {
           'upstream' tracking relationship, which simplifies future pushes and pulls. After the initial push, you can just run{' '}
           <code className="font-code text-accent">git push</code> and <code className="font-code text-accent">git pull</code>.
         </p>
-        {remoteRepoDiagram && <Image
-          src={remoteRepoDiagram.imageUrl}
-          width={800}
-          height={400}
-          alt={remoteRepoDiagram.description}
-          className="rounded-lg glow-border"
-          data-ai-hint={remoteRepoDiagram.imageHint}
-        />}
         <CodeBlock
           code={`# Link local repo to a remote on GitHub (use the URL from GitHub)\ngit remote add origin https://github.com/user/repo.git\n\n# Push your 'main' branch to the 'origin' remote and set up tracking\ngit push -u origin main\n\n# In the future, pull updates from the remote repo\ngit pull\n\n# And push your local updates\ngit push`}
         />
@@ -221,6 +204,14 @@ export default function Home() {
           suggest improvements, run automated checks, and finally approve the merge. This is the heart of
           professional, collaborative software development.
         </p>
+        {collaborationDiagram && <Image
+          src={collaborationDiagram.imageUrl}
+          width={800}
+          height={400}
+          alt={collaborationDiagram.description}
+          className="rounded-lg glow-border"
+          data-ai-hint={collaborationDiagram.imageHint}
+        />}
         <CodeBlock
           code={`# Create a new branch named 'new-feature' and switch to it\ngit checkout -b new-feature\n\n# ... work on your feature and make commits ...\n\n# When ready, switch back to the main branch\ngit checkout main\n\n# Pull the latest changes from remote to avoid conflicts\ngit pull origin main\n\n# Merge your new-feature branch into main\ngit merge new-feature\n\n# On GitHub, create a Pull Request for peer review before merging.`}
         />
@@ -312,5 +303,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
